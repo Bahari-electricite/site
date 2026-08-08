@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bahari Électricité — Électricien indépendant à Brest</title>
+<meta name="description" content="Électricien indépendant diplômé, intervention sur Brest Métropole et alentours. Tableaux électriques, prises, mise aux normes, dépannage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ardoise: #141C26;
+    --ardoise-2: #1D2733;
+    --marine: #1D3557;
+    --cuivre: #C97B4A;
+    --cuivre-clair: #E3A876;
+    --lin: #F5F1E7;
+    --lin-2: #ECE5D6;
+    --vert-terre: #3E7A5D;
+    --jaune-phase: #E8B23D;
+    --texte-clair: #F5F1E7;
+    --texte-sombre: #1B242E;
+    --texte-muted: #8C97A3;
+    --radius: 3px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Source Sans 3', sans-serif;
+    background:var(--lin);
+    color:var(--texte-sombre);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.04em;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* Skip link / focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--cuivre);
+    outline-offset:3px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(20,28,38,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(245,241,231,0.08);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:1120px; margin:0 auto;
+  }
+  .logo{
+    color:var(--lin);
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    display:flex; align-items:center; gap:10px;
+  }
+  .logo-mark{
+    width:22px; height:22px;
+    border-radius:50%;
+    border:2px solid var(--cuivre);
+    position:relative;
+    flex-shrink:0;
+  }
+  .logo-mark::after{
+    content:"";
+    position:absolute; left:50%; top:50%;
+    width:2px; height:9px;
+    background:var(--cuivre);
+    transform:translate(-50%,-50%);
+  }
+  .nav-links{
+    display:flex; gap:32px; align-items:center;
+  }
+  .nav-links a{
+    color:var(--texte-muted);
+    font-size:0.92rem;
+    font-weight:600;
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--lin);}
+  .nav-cta{
+    background:var(--cuivre);
+    color:var(--ardoise) !important;
+    padding:9px 18px;
+    border-radius:var(--radius);
+    font-weight:700 !important;
+    font-size:0.88rem !important;
+  }
+  .nav-toggle{display:none;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed; top:63px; left:0; right:0;
+      background:var(--ardoise);
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+      border-bottom:1px solid rgba(245,241,231,0.08);
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links a{
+      width:100%; padding:16px 28px;
+      border-top:1px solid rgba(245,241,231,0.06);
+    }
+    .nav-cta{margin:16px 28px; display:inline-block;}
+    .nav-toggle{
+      display:flex; flex-direction:column; gap:5px;
+      background:none; border:none; cursor:pointer; padding:8px;
+    }
+    .nav-toggle span{
+      width:22px; height:2px; background:var(--lin); display:block;
+    }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ardoise);
+    color:var(--lin);
+    padding:100px 0 90px;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero .wrap{
+    max-width:680px;
+  }
+  .eyebrow{
+    color:var(--cuivre-clair);
+    font-size:0.8rem;
+    font-weight:600;
+    text-transform:uppercase;
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px; height:1px;
+    background:var(--cuivre-clair);
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.4rem);
+    font-weight:700;
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--cuivre-clair);
+  }
+  .hero p{
+    color:var(--texte-muted);
+    font-size:1.08rem;
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 24px;
+    border-radius:var(--radius);
+    font-weight:700;
+    font-size:0.95rem;
+    transition:transform .18s ease, background .18s ease;
+  }
+  .btn-primary{background:var(--cuivre); color:var(--ardoise);}
+  .btn-primary:hover{background:var(--cuivre-clair); transform:translateY(-2px);}
+  .btn-ghost{border:1px solid rgba(245,241,231,0.28); color:var(--lin);}
+  .btn-ghost:hover{border-color:var(--cuivre-clair); color:var(--cuivre-clair);}
+
+  /* Breaker illustration */
+  .breaker-art{
+    background:var(--ardoise-2);
+    border:1px solid rgba(245,241,231,0.1);
+    border-radius:6px;
+    padding:22px;
+  }
+  .breaker-art .plate-label{
+    font-size:0.72rem; color:var(--texte-muted);
+    display:flex; justify-content:space-between;
+    margin-bottom:16px;
+    padding-bottom:12px;
+    border-bottom:1px dashed rgba(245,241,231,0.12);
+  }
+  .breaker-row{
+    display:flex; align-items:center; gap:14px;
+    padding:11px 4px;
+    border-bottom:1px solid rgba(245,241,231,0.06);
+  }
+  .breaker-row:last-child{border-bottom:none;}
+  .breaker-num{
+    font-size:0.7rem; color:var(--texte-muted); width:26px;
+  }
+  .switch{
+    width:34px; height:18px;
+    background:#0E141C;
+    border-radius:9px;
+    position:relative;
+    flex-shrink:0;
+    border:1px solid rgba(245,241,231,0.15);
+  }
+  .switch::after{
+    content:"";
+    position:absolute; top:2px; left:2px;
+    width:12px; height:12px;
+    border-radius:50%;
+    background:var(--texte-muted);
+    transition:left .5s ease, background .5s ease;
+  }
+  .switch.on::after{
+    left:18px;
+    background:var(--vert-terre);
+    box-shadow:0 0 8px rgba(62,122,93,0.7);
+  }
+  .breaker-row span.label{
+    font-size:0.82rem; color:var(--lin); flex:1;
+  }
+  .breaker-row.dim .label{color:var(--texte-muted);}
+
+  /* stagger animation on load */
+  .breaker-row .switch{opacity:0; animation:flipIn .5s ease forwards;}
+  .breaker-row:nth-child(1) .switch{animation-delay:.2s;}
+  .breaker-row:nth-child(2) .switch{animation-delay:.4s;}
+  .breaker-row:nth-child(3) .switch{animation-delay:.6s;}
+  .breaker-row:nth-child(4) .switch{animation-delay:.8s;}
+  @keyframes flipIn{
+    from{opacity:0; transform:translateY(-4px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .breaker-row .switch{animation:none !important; opacity:1;}
+    .switch::after{transition:none;}
+  }
+
+  @media (max-width:840px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero{padding:56px 0 60px;}
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:88px 0;}
+  .section-head{margin-bottom:48px; max-width:60ch;}
+  .section-tag{
+    font-size:0.78rem; font-weight:600; color:var(--cuivre);
+    text-transform:uppercase; margin-bottom:12px;
+    display:block;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.3rem);
+    color:var(--marine);
+  }
+
+  /* ---------- QUI SUIS-JE ---------- */
+  .about{background:var(--lin);}
+  .about .wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:60px;
+    align-items:start;
+  }
+  .about-badges{
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .badge{
+    background:#fff;
+    border:1px solid rgba(29,53,87,0.12);
+    border-left:4px solid var(--vert-terre);
+    padding:18px 20px;
+    border-radius:2px;
+  }
+  .badge .mono{
+    font-size:0.7rem; color:var(--vert-terre); font-weight:600;
+    display:block; margin-bottom:6px;
+  }
+  .badge p{font-size:0.94rem; color:var(--texte-sombre); margin:0;}
+  .about-text p{
+    color:#3A4552; margin-bottom:18px; font-size:1.02rem;
+  }
+  .about-text p:last-child{margin-bottom:0;}
+  .about-text strong{color:var(--marine);}
+
+  @media (max-width:840px){
+    .about .wrap{grid-template-columns:1fr;}
+  }
+
+  /* ---------- ZONE D'INTERVENTION ---------- */
+  .zone{background:var(--ardoise); color:var(--lin);}
+  .zone .section-head h2{color:var(--lin);}
+  .zone-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .radar{
+    position:relative;
+    width:100%;
+    max-width:340px;
+    aspect-ratio:1/1;
+    margin:0 auto;
+  }
+  .ring{
+    position:absolute; border-radius:50%;
+    border:1px dashed rgba(245,241,231,0.22);
+    top:50%; left:50%; transform:translate(-50%,-50%);
+  }
+  .ring.r1{width:38%; height:38%; border-color:var(--cuivre-clair); border-style:solid; background:rgba(201,123,74,0.14);}
+  .ring.r2{width:68%; height:68%;}
+  .ring.r3{width:98%; height:98%;}
+  .radar-center{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:10px; height:10px; border-radius:50%;
+    background:var(--cuivre); z-index:2;
+    box-shadow:0 0 0 6px rgba(201,123,74,0.25);
+  }
+  .radar-label{
+    position:absolute; font-size:0.68rem; color:var(--texte-muted);
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .radar-label.l1{top:50%; left:50%; transform:translate(-50%, 26px);}
+  .radar-label.l3{top:4px; left:50%; transform:translate(-50%,0);}
+
+  .zone-list{display:flex; flex-direction:column; gap:22px;}
+  .zone-item{
+    display:flex; gap:16px; align-items:flex-start;
+    padding-bottom:22px;
+    border-bottom:1px solid rgba(245,241,231,0.1);
+  }
+  .zone-item:last-child{border:none; padding-bottom:0;}
+  .zone-dot{
+    width:10px; height:10px; border-radius:50%;
+    margin-top:6px; flex-shrink:0;
+  }
+  .zone-dot.in{background:var(--cuivre-clair);}
+  .zone-dot.out{background:var(--texte-muted);}
+  .zone-item h3{font-size:1rem; margin-bottom:4px; font-family:'Source Sans 3'; font-weight:700;}
+  .zone-item p{font-size:0.92rem; color:var(--texte-muted); margin:0;}
+
+  @media (max-width:840px){
+    .zone-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- PRESTATIONS — TABLEAU ---------- */
+  .prestations{background:var(--lin);}
+  .panel{
+    background:var(--ardoise);
+    border-radius:6px;
+    padding:6px;
+  }
+  .panel-inner{
+    border:1px solid rgba(245,241,231,0.08);
+    border-radius:4px;
+  }
+  .panel-header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 22px;
+    border-bottom:1px solid rgba(245,241,231,0.1);
+  }
+  .panel-header span{color:var(--texte-muted); font-size:0.72rem;}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .service{
+    padding:22px;
+    border-bottom:1px solid rgba(245,241,231,0.08);
+    display:flex; gap:14px; align-items:flex-start;
+    transition:background .2s;
+  }
+  .service:hover{background:rgba(245,241,231,0.03);}
+  .service:nth-child(odd){border-right:1px solid rgba(245,241,231,0.08);}
+  .service-code{
+    font-size:0.68rem; color:var(--cuivre-clair);
+    white-space:nowrap; padding-top:2px;
+  }
+  .service h3{
+    color:var(--lin); font-size:0.98rem; font-family:'Source Sans 3'; font-weight:700;
+    margin-bottom:5px;
+  }
+  .service p{color:var(--texte-muted); font-size:0.86rem; margin:0;}
+
+  @media (max-width:640px){
+    .service-grid{grid-template-columns:1fr;}
+    .service:nth-child(odd){border-right:none;}
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--marine); color:var(--lin);}
+  .contact .wrap{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .contact h2{color:var(--lin); font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:16px;}
+  .contact p.lead{color:rgba(245,241,231,0.72); max-width:44ch; margin-bottom:30px;}
+  .contact-actions{display:flex; flex-direction:column; gap:14px;}
+  .contact-line{
+    display:flex; align-items:center; gap:14px;
+    padding:16px 20px;
+    background:rgba(245,241,231,0.06);
+    border-radius:var(--radius);
+    border:1px solid rgba(245,241,231,0.1);
+    transition:border-color .2s, background .2s;
+  }
+  .contact-line:hover{border-color:var(--cuivre-clair); background:rgba(245,241,231,0.1);}
+  .contact-line .mono{font-size:0.68rem; color:var(--cuivre-clair); display:block;}
+  .contact-line strong{font-size:1.02rem; font-weight:700;}
+  .zone-note{
+    margin-top:26px; font-size:0.85rem; color:rgba(245,241,231,0.55);
+  }
+
+  @media (max-width:840px){
+    .contact .wrap{grid-template-columns:1fr;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ardoise);
+    color:var(--texte-muted);
+    padding:34px 0;
+    font-size:0.82rem;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  footer a{color:var(--texte-muted); text-decoration:underline; text-underline-offset:3px;}
+  footer a:hover{color:var(--cuivre-clair);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo"><span class="logo-mark"></span>Bahari Électricité</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#apropos">Qui suis-je</a>
+      <a href="#prestations">Prestations</a>
+      <a href="#zone">Zone d'intervention</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+33749271857" class="nav-cta">07 49 27 18 57</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow mono">Électricien indépendant — Brest &amp; alentours</span>
+        <h1>L'électricité de votre maison,<br><em>en toute sécurité.</em></h1>
+        <p>Auto-entrepreneur diplômé en électricité, j'interviens chez les particuliers pour tous vos travaux : installation, dépannage et mise aux normes. Plusieurs années d'expérience à votre service.</p>
+        <div class="btn-row">
+          <a href="#prestations" class="btn btn-ghost">Voir mes prestations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUI SUIS-JE -->
+  <section class="about" id="apropos">
+    <div class="wrap">
+      <div class="about-badges">
+        <div class="badge">
+          <span class="mono">FORMATION</span>
+          <p>Diplômé en électricité, formé pour intervenir en toute conformité sur les installations électriques des particuliers.</p>
+        </div>
+        <div class="badge">
+          <span class="mono">EXPÉRIENCE</span>
+          <p>Plusieurs années d'expérience sur le terrain, du dépannage simple à la rénovation électrique complète.</p>
+        </div>
+        <div class="badge">
+          <span class="mono">HABILITATION</span>
+          <p>Habilitation électrique à jour pour travailler en sécurité sur vos installations basse tension.</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Qui suis-je</span>
+        <h2 style="margin-bottom:20px; color:var(--marine);">Un artisan électricien à votre écoute</h2>
+        <p>Basé à Brest, je suis auto-entrepreneur spécialisé dans l'électricité chez les particuliers. <strong>Diplômé</strong> et qualifié pour intervenir sur tous types de travaux électriques, je mets mon expérience au service de la sécurité et du confort de votre logement.</p>
+        <p>Chaque intervention est réalisée dans le respect des normes en vigueur, avec un souci constant de <strong>propreté, de rigueur et de transparence</strong> sur les tarifs. Que ce soit pour un dépannage urgent, une rénovation complète ou une simple mise aux normes, je vous accompagne du diagnostic jusqu'à la mise en service.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE D'INTERVENTION -->
+  <section class="zone" id="zone">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag" style="color:var(--cuivre-clair);">Zone d'intervention</span>
+        <h2>Brest Métropole, et au-delà</h2>
+      </div>
+      <div class="zone-grid">
+        <div class="radar" role="img" aria-label="Carte schématique des zones d'intervention autour de Brest">
+          <div class="ring r3"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="radar-center"></div>
+          <span class="radar-label l1 mono">BREST</span>
+          <span class="radar-label l3 mono">ZONE ÉLARGIE</span>
+        </div>
+        <div class="zone-list">
+          <div class="zone-item">
+            <span class="zone-dot in"></span>
+            <div>
+              <h3>Brest Métropole</h3>
+              <p>Déplacement inclus — Brest, Guipavas, Le Relecq-Kerhuon, Plougastel-Daoulas, Gouesnou et communes voisines.</p>
+            </div>
+          </div>
+          <div class="zone-item">
+            <span class="zone-dot out"></span>
+            <div>
+              <h3>Au-delà de la métropole</h3>
+              <p>J'interviens plus loin dans le Finistère avec un supplément de déplacement, calculé selon la distance et communiqué avant chaque devis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS -->
+  <section class="prestations" id="prestations">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Prestations</span>
+      </div>
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="service-grid">
+            <div class="service">
+              <span class="service-code mono">01</span>
+              <div>
+                <h3>Changement de tableau électrique</h3>
+                <p>Remplacement complet ou partiel de votre tableau pour plus de sécurité.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">02</span>
+              <div>
+                <h3>Prises et interrupteurs</h3>
+                <p>Installation de nouvelles prises, interrupteurs et points lumineux.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">03</span>
+              <div>
+                <h3>Mise aux normes (NF C 15-100)</h3>
+                <p>Mise en conformité de votre installation électrique existante.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">04</span>
+              <div>
+                <h3>Dépannage &amp; recherche de panne</h3>
+                <p>Diagnostic et résolution rapide de vos pannes électriques.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">05</span>
+              <div>
+                <h3>Éclairage intérieur &amp; extérieur</h3>
+                <p>Installation de luminaires, spots et éclairage de jardin.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">06</span>
+              <div>
+                <h3>Borne de recharge véhicule électrique</h3>
+                <p>Pose et raccordement de votre borne de recharge à domicile.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">07</span>
+              <div>
+                <h3>Rénovation électrique complète</h3>
+                <p>Réfection totale de l'installation dans le cadre d'une rénovation.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">08</span>
+              <div>
+                <h3>Diagnostic avant vente</h3>
+                <p>Vérification de l'installation avant la mise en vente du logement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <span class="section-tag" style="color:var(--cuivre-clair);">Contact</span>
+        <h2>Parlons de votre projet</h2>
+        <p class="lead">Décrivez-moi vos travaux, je reviens vers vous avec un devis clair, sans engagement.</p>
+        <p class="zone-note">Intervention à Brest et dans toute la métropole — déplacement plus loin possible avec supplément.</p>
+      </div>
+      <div class="contact-actions">
+        <a href="tel:+33749271857" class="contact-line">
+          <div>
+            <span class="mono">TÉLÉPHONE</span>
+            <strong>07 49 27 18 57</strong>
+          </div>
+        </a>
+        <a href="mailto:contact@bahari-electricite.fr" class="contact-line">
+          <div>
+            <span class="mono">EMAIL</span>
+            <strong>contact@bahari-electricite.fr</strong>
+          </div>
+        </a>
+        <div class="contact-line" style="cursor:default;">
+          <div>
+            <span class="mono">SECTEUR</span>
+            <strong>Brest &amp; Brest Métropole</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="flex-direction:column; align-items:flex-start; gap:6px;">
+    <span>© <span id="year"></span> Bahari Électricité — bahari-electricite.fr</span>
+    <span>Bahari — Entrepreneur individuel — SIRET 902 465 418 00025 — 17 Rue Vauvenargues, 29200 Brest</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+
+</body>
+</html>
