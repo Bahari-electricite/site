@@ -314,46 +314,16 @@
   .zone{background:var(--ardoise); color:var(--lin);}
   .zone .section-head h2{color:var(--lin);}
   .zone-grid{
+    max-width:760px;
+  }
+  .zone-list{
     display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:56px;
-    align-items:center;
+    grid-template-columns:1fr 1fr;
+    gap:32px 40px;
   }
-  .radar{
-    position:relative;
-    width:100%;
-    max-width:340px;
-    aspect-ratio:1/1;
-    margin:0 auto;
-  }
-  .ring{
-    position:absolute; border-radius:50%;
-    border:1px dashed rgba(245,241,231,0.22);
-    top:50%; left:50%; transform:translate(-50%,-50%);
-  }
-  .ring.r1{width:38%; height:38%; border-color:var(--cuivre-clair); border-style:solid; background:rgba(201,123,74,0.14);}
-  .ring.r2{width:68%; height:68%;}
-  .ring.r3{width:98%; height:98%;}
-  .radar-center{
-    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    width:10px; height:10px; border-radius:50%;
-    background:var(--cuivre); z-index:2;
-    box-shadow:0 0 0 6px rgba(201,123,74,0.25);
-  }
-  .radar-label{
-    position:absolute; font-size:0.68rem; color:var(--texte-muted);
-    font-family:'IBM Plex Mono', monospace;
-  }
-  .radar-label.l1{top:50%; left:50%; transform:translate(-50%, 26px);}
-  .radar-label.l3{top:4px; left:50%; transform:translate(-50%,0);}
-
-  .zone-list{display:flex; flex-direction:column; gap:22px;}
   .zone-item{
     display:flex; gap:16px; align-items:flex-start;
-    padding-bottom:22px;
-    border-bottom:1px solid rgba(245,241,231,0.1);
   }
-  .zone-item:last-child{border:none; padding-bottom:0;}
   .zone-dot{
     width:10px; height:10px; border-radius:50%;
     margin-top:6px; flex-shrink:0;
@@ -520,20 +490,12 @@
         <h2>Brest Métropole, et au-delà</h2>
       </div>
       <div class="zone-grid">
-        <div class="radar" role="img" aria-label="Carte schématique des zones d'intervention autour de Brest">
-          <div class="ring r3"></div>
-          <div class="ring r2"></div>
-          <div class="ring r1"></div>
-          <div class="radar-center"></div>
-          <span class="radar-label l1 mono">BREST</span>
-          <span class="radar-label l3 mono">ZONE ÉLARGIE</span>
-        </div>
         <div class="zone-list">
           <div class="zone-item">
             <span class="zone-dot in"></span>
             <div>
               <h3>Brest Métropole</h3>
-              <p>Déplacement inclus — Brest, Guipavas, Le Relecq-Kerhuon, Plougastel-Daoulas, Gouesnou et communes voisines.</p>
+              <p>Déplacement inclus — Brest, Bohars, Gouesnou, Guilers, Guipavas, Le Relecq-Kerhuon, Plougastel-Daoulas et Plouzané.</p>
             </div>
           </div>
           <div class="zone-item">
@@ -561,59 +523,73 @@
             <div class="service">
               <span class="service-code mono">01</span>
               <div>
+                <h3>Installation électrique neuve</h3>
+                <p>Câblage complet pour une construction, une extension ou un local à équiper.</p>
+              </div>
+            </div>
+            <div class="service">
+              <span class="service-code mono">02</span>
+              <div>
                 <h3>Changement de tableau électrique</h3>
                 <p>Remplacement complet ou partiel de votre tableau pour plus de sécurité.</p>
               </div>
             </div>
             <div class="service">
-              <span class="service-code mono">02</span>
+              <span class="service-code mono">03</span>
               <div>
                 <h3>Prises et interrupteurs</h3>
                 <p>Installation de nouvelles prises, interrupteurs et points lumineux.</p>
               </div>
             </div>
             <div class="service">
-              <span class="service-code mono">03</span>
+              <span class="service-code mono">04</span>
               <div>
                 <h3>Mise aux normes (NF C 15-100)</h3>
                 <p>Mise en conformité de votre installation électrique existante.</p>
               </div>
             </div>
             <div class="service">
-              <span class="service-code mono">04</span>
+              <span class="service-code mono">05</span>
               <div>
                 <h3>Dépannage &amp; recherche de panne</h3>
                 <p>Diagnostic et résolution rapide de vos pannes électriques.</p>
               </div>
             </div>
             <div class="service">
-              <span class="service-code mono">05</span>
+              <span class="service-code mono">06</span>
               <div>
                 <h3>Éclairage intérieur &amp; extérieur</h3>
                 <p>Installation de luminaires, spots et éclairage de jardin.</p>
               </div>
             </div>
             <div class="service">
-              <span class="service-code mono">06</span>
+              <span class="service-code mono">07</span>
               <div>
                 <h3>Borne de recharge véhicule électrique</h3>
                 <p>Pose et raccordement de votre borne de recharge, à domicile ou sur votre lieu de travail.</p>
               </div>
             </div>
             <div class="service">
-              <span class="service-code mono">07</span>
+              <span class="service-code mono">08</span>
               <div>
                 <h3>Rénovation électrique complète</h3>
                 <p>Réfection totale de l'installation dans le cadre d'une rénovation.</p>
               </div>
             </div>
             <div class="service">
-              <span class="service-code mono">08</span>
+              <span class="service-code mono">09</span>
               <div>
                 <h3>Diagnostic avant vente</h3>
                 <p>Vérification de l'installation avant la mise en vente ou en location de votre bien.</p>
               </div>
             </div>
+            <a href="#contact" class="service">
+              <span class="service-code mono">10</span>
+              <div>
+                <h3>Un autre besoin ?</h3>
+                <p>Cette liste n'est pas exhaustive : contactez-moi pour en discuter, je m'adapte à la plupart des travaux électriques.</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
